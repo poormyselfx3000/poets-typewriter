@@ -1,10 +1,10 @@
-// const addBreaks = (lines) => {
-//     let poem = "";
-//     for (let i = 0; i < lines.length; i++) {
-//         poem += lines[i] + "<br>"
-//     }
-//     return poem;
-// }
+const addBreaks = (lines) => {
+    let poem = "";
+    for (let i = 0; i < lines.length; i++) {
+        poem += lines[i] + "<br>"
+    }
+    return poem;
+}
 
 let index = 0;
 const typing = (poem, verses) => {    
@@ -14,21 +14,8 @@ const typing = (poem, verses) => {
         verses.innerHTML = poem.slice(0, index);
         index++;
         typing(poem, verses);
-    }, 90);     
+    }, 50);     
 }
-
-// getPoems()
-//     .then(titles => selectTitle(titles))
-//     .then(poem => {
-//         const title = document.getElementsByClassName("title")[0];
-//         title.innerHTML = poem.title;
-        
-//         author.innerHTML = poem.author;
-//         const verses = document.getElementsByClassName("verses")[0];
-//         const lines = addBreaks(poem.lines);
-//         typing(lines, verses);
-//     })
-//     .catch(err => console.log(err.message))
 
 const getPoems = async () => {
     const url = "https://mockend.com/phudinhtruongk18/poets-typewriter/poem";
@@ -46,37 +33,28 @@ const selectPoems = async (poems) => {
 }
 
 const extractPoem = (body) => {
-    
     const title = body.match(/<title>(.*)<\/title>/);
-    const content = body.match(/<content>(.*)<\/content>/);
-    console.log("title");
-    console.log(title);
-    console.log("content");
-    console.log(content);
-    return {title, content};
+    const content = body.match(/<content>((.|\n)*)<\/content>/)[1];
+    var lines = content.split("\n");
+    return {title, lines};
 }
 
 const author = document.getElementsByClassName("author")[0];
+const title = document.getElementsByClassName("title")[0];
+const verses = document.getElementsByClassName("verses")[0];
 author.innerHTML = '<i class="fa-solid fa-scroll fa-2xl fa-fade"></i>'
-
 
 getPoems()
     .then(poems => selectPoems(poems))
     .then(poem => {
-        author.innerHTML = poem.author;
 
         poemEx = extractPoem(poem.body);
-        console.log("poemEx.title");
-        console.log(poemEx.title);
-        console.log("poemEx.content");
-        console.log(poemEx.content);
-        // const title = document.getElementsByClassName("title")[0];
-        // title.innerHTML = poemEx.title;
         
-        // const verses = document.getElementsByClassName("verses")[0];
+        const lines = addBreaks(poemEx.lines);
 
+        author.innerHTML = poem.author;
+        title.innerHTML = poemEx.title;
+        typing(lines, verses);
 
-        // typing(lines, verses);
     })
     .catch(err => console.log(err.message))
-

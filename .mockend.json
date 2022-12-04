@@ -1,6 +1,12 @@
 {
-    "Poems": {
-        "title": { "string": ["Thơ Bốn Thủ", "tile2", "tule3"] }
+    "Poem": {
+        "title": { "string": ["Thơ Bốn Thủ", "tile2", "tule3"] },
+        "author": {"string": ["Nguyễn Thế Thủ"]},
+        "content": {"string":[
+                    "Con đò bình thủy còn đưa\nDòng sông vẫn đợi người xưa vẫn chờ\nAnh về cho đẹp giấc mơ\nCủa người em gái bên bờ sông hương\n\nRồi có mùa xuân nào hoa không nở\nCó tâm sự nào buồn như đêm mưa\nCó mùa đông nào không giá lạnh\nThì biết tình yêu mấy cho vừa.",
+                    "test data 2"
+            ]
+        }
     }
 }
 

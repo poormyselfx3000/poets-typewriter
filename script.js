@@ -1,3 +1,5 @@
+const url = "https://api.jsonstorage.net/v1/json/a7966e7c-3e7b-4b61-ae9e-4de65b74494e/7ad8ab28-752e-4f02-8fc1-929ad97a1f6f";
+
 const addBreaks = (lines) => {
     let poem = "";
     for (let i = 0; i < lines.length; i++) {
@@ -18,7 +20,6 @@ const typing = (poem, verses) => {
 }
 
 const getPoems = async () => {
-    const url = "https://mockend.com/phudinhtruongk18/poets-typewriter/poem";
     const response = await fetch(url);    
     if (response.status !== 200) {
         throw new Error('Oops... Something went wrong :(');
@@ -32,13 +33,6 @@ const selectPoems = async (poems) => {
     return poems[ran];
 }
 
-const extractPoem = (body) => {
-    const title = body.match(/<title>(.*)<\/title>/);
-    const content = body.match(/<content>((.|\n)*)<\/content>/)[1];
-    var lines = content.split("\n");
-    return {title, lines};
-}
-
 const author = document.getElementsByClassName("author")[0];
 const title = document.getElementsByClassName("title")[0];
 const verses = document.getElementsByClassName("verses")[0];
@@ -48,12 +42,11 @@ getPoems()
     .then(poems => selectPoems(poems))
     .then(poem => {
 
-        poemEx = extractPoem(poem.body);
-        
-        const lines = addBreaks(poemEx.lines);
+        var lines = poem.content.split("\n");
+        lines = addBreaks(lines);
 
         author.innerHTML = poem.author;
-        title.innerHTML = poemEx.title;
+        title.innerHTML = poem.title;
         typing(lines, verses);
 
     })

@@ -1,26 +1,23 @@
 {
-    "poems": [
-        {
-            "title": "Thơ Bốn Thủ",
-            "author": "Nguyễn Thế Thủ",
-            "lines": [
-                "Con đò bình thủy còn đưa",
-                "Dòng sông vẫn đợi người xưa vẫn chờ",
-                "Anh về cho đẹp giấc mơ",
-                "Của người em gái bên bờ sông hương",
-                "",
-                "Rồi có mùa xuân nào hoa không nở",
-                "Có tâm sự nào buồn như đêm mưa",
-                "Có mùa đông nào không giá lạnh",
-                "Thì biết tình yêu mấy cho vừa."
+    "Poems": {
+      "title": {
+        "string": [
+            "Thơ Bốn Thủ",
+            "Test data 2"
+            ]
+      },
+        "author": {
+            "string": [
+                "Nguyễn Thế Thủ"
             ]
         },
-        {
-            "title": "Test data 2",
-            "author": "Test data 2",
-            "lines": [
-                "test data 2"
+        "content": {
+            "string": 
+                [
+                    "Con đò bình thủy còn đưa\nDòng sông vẫn đợi người xưa vẫn chờ\nAnh về cho đẹp giấc mơ\nCủa người em gái bên bờ sông hương\n\nRồi có mùa xuân nào hoa không nở\nCó tâm sự nào buồn như đêm mưa\nCó mùa đông nào không giá lạnh\nThì biết tình yêu mấy cho vừa.",
+                    "test data 2"
             ]
         }
-    ]
+    }
 }
+

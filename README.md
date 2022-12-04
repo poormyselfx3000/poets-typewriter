@@ -1,4 +1,4 @@
-Fork from [Typewriter](https://github.com/dbuzon/poets-typewriter) by [dbuzon](https://github.com/dbuzon)
+Fork from [Typewriter](https://github.com/dbuzon/poets-typewriter) by [dbuzon](https://github.com/dbuzon) <3
 
 <h1 align="center">Poet's Typewriter</h1>
 

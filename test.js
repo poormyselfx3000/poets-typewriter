@@ -1,17 +1,9 @@
-// get response from https://allpoetry.com/Caythuearam#t_main 
+// const poem_body = "<title>Thơ Bốn Thủ</title><omg>Con đò bình thủy còn đưa\nDòng sông vẫn đợi người xưa vẫn chờ\nAnh về cho đẹp giấc mơ\nCủa người em gái bên bờ sông hương\n\nRồi có mùa xuân nào hoa không nở\nCó tâm sự nào buồn như đêm mưa\nCó mùa đông nào không giá lạnh\nThì biết tình yêu mấy cho vừa.</omg>"
+const poem_body = "<omg>Con đò bình thủy còn đưa\nDòng sông vẫn đợi người xưa vẫn chờ\nAnh về cho đẹp giấc mơ\nCủa người em gái bên bờ sông hương\n\nRồi có mùa xuân nào hoa không nở\nCó tâm sự nào buồn như đêm mưa\nCó mùa đông nào không giá lạnh\nThì biết tình yêu mấy cho vừa.<\/omg>"
+// extact title and content from poem_body
 
+// const title = poem_body.match(/<title>(.*)<\/title>/)[1];
+const omg = poem_body.match(/<omg>(.*)<\/omg>/);
 
-const getPoems = async () => {
-    const url = "https://allpoetry.com/Caythuearam#t_main";
-    const response = await fetch(url);    
-    if (response.status !== 200) {
-        throw new Error('Oops... Something went wrong :(');
-    }
-    const poems = await response.json();
-    if (poems.titles === undefined) {
-        throw new Error('Oops... Something went wrong :(');
-    }
-    return poems;
-}
-
-const poems = getPoems();
+// console.log(title);
+console.log(omg);

@@ -1,4 +1,4 @@
-const url = "https://api.jsonstorage.net/v1/json/a7966e7c-3e7b-4b61-ae9e-4de65b74494e/7ad8ab28-752e-4f02-8fc1-929ad97a1f6f";
+const url = "https://2q1vx3.deta.dev/";
 
 const addBreaks = (lines) => {
     let poem = "";
@@ -19,18 +19,13 @@ const typing = (poem, verses) => {
     }, 50);     
 }
 
-const getPoems = async () => {
-    const response = await fetch(url);    
+const getPoem = async () => {
+    const response = await fetch(url);
     if (response.status !== 200) {
         throw new Error('Oops... Something went wrong :(');
     }
-    const poems = await response.json();
-    return poems;
-}
-
-const selectPoems = async (poems) => {
-    const ran = Math.floor(Math.random() * poems.length);
-    return poems[ran];
+    const poem = await response.json();
+    return poem;
 }
 
 const author = document.getElementsByClassName("author")[0];
@@ -38,8 +33,7 @@ const title = document.getElementsByClassName("title")[0];
 const verses = document.getElementsByClassName("verses")[0];
 author.innerHTML = '<i class="fa-solid fa-scroll fa-2xl fa-fade"></i>'
 
-getPoems()
-    .then(poems => selectPoems(poems))
+getPoem()
     .then(poem => {
 
         var lines = poem.content.split("\n");

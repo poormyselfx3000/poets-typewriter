@@ -1,4 +1,4 @@
-const url = "https://2q1vx3.deta.dev/";
+const url = "https://ats2cr.deta.dev/";
 
 const addBreaks = (lines) => {
     let poem = "";

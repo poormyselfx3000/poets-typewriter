@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple website that shows a random poem with a typing effect, as if the authors were typing it to you!">
+    <meta name="keywords" content="Poetry, poems, literature, poet, typewriter, poet's typewriter">
+    <meta name="author" content="Debora Buzon">
+    <meta property="og:url" content="https://phudinhtruongk18.github.io/poets-typewriter/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="500 bài thơ của Nguyễn Thế Thủ">
+    <meta property="og:description" content="Mỗi ngày một bài thơ!">
+    <meta property="og:image" content="https://imgur.com/RzQBXOl.png">
+    <title>Poet's Typewriter</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLKD3P97NM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-VLKD3P97NM');
+    </script>
+</head>
+<body>
+    <div class="logo">
+        <a href="./index.html">
+            <div class="logo">
+                <object data="logo.svg" width="56" height="56"> </object>
+                <p>Poet's Typewriter</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="poem">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" placeholder="Author">
+        </div>
+        <div class="poem">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" placeholder="Title">
+        </div>
+        <div class="poem">
+            <label for="content">Content</label>
+            <textarea name="content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+        </div>
+        <div class="poem">
+            <!-- run addPoem() -->
+            <input type="submit" value="Add" onclick="addPoem()">
+        </div>
+    </div>
+
+    <footer>
+        <br>
+        Made with ♡ by 
+        <a href="https://github.com/dbuzon/poets-typewriter">Debora Buzon</a>
+<!--    Ty nana      -->
+    </footer>
+    
+    <script src="script-add.js"></script>
+</body>
+</html> 

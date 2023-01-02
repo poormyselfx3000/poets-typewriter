@@ -1,14 +1,16 @@
 const url = "https://ats2cr.deta.dev/";
 
+var author = document.getElementById("author");
+var title = document.getElementById("title");
+var content = document.getElementById("content");
+var notify = document.getElementById("noti");
+
 function addPoem() {
-    const author = document.getElementById("author").value;
-    const title = document.getElementById("title").value;
-    const content = document.getElementById("content").value;
 
     const poem = {
-        author: author,
-        title: title,
-        content: content
+        author: author.value,
+        title: title.value,
+        content: content.value
     }
 
     fetch(url, {
@@ -19,6 +21,14 @@ function addPoem() {
         }
     })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(
+            notify.innerText = "Poem added successfully!",
+            author.value = "",
+            title.value = "",
+            content.value = "",
+            setTimeout(() => {
+                notify.innerText = "";
+            }, 2000)
+        )
         .catch(err => console.log(err.message))
 }

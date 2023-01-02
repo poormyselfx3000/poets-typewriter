@@ -1,4 +1,10 @@
-const url = "https://ats2cr.deta.dev/";
+var url = "https://ats2cr.deta.dev";
+const urlParams = new URLSearchParams(window.location.search);
+const key = urlParams.get('key');
+
+if (key) {
+    url += "/poems/" + key;
+}
 
 const addBreaks = (lines) => {
     let poem = "";

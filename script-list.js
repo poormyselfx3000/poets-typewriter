@@ -19,7 +19,7 @@ getPoems()
         for (const poem of poems) {
             const li = document.createElement('li');
             li.innerHTML = `
-                <a href="poems.html/${poem.key}">
+                <a href="./?key=${poem.key}">
                     <span class="poem-title">${poem.title}</span>`
             poemsContainer.appendChild(li);
         }
